@@ -36,14 +36,19 @@ const nextYear = `${currentYear + 1}-${currentMonth}-${currentDay}`;
 console.log(currentDate);
 
 //Popular games
-const popular_games = `games?dates=${lastYear},${currentDate}&ordering=-rating&page_size=10&key=0c06a84db972452cab2b761e3c81f18b
+const popular_games = `games?dates=${lastYear},${currentDate}&ordering=-rating&page_size=10&key=${process.env.REACT_APP_API_KEY}
 `;
-const upcoming_games = `games?dates=${currentDate},${nextYear}&ordering=-added&page_size=10&key=0c06a84db972452cab2b761e3c81f18b`;
+const upcoming_games = `games?dates=${currentDate},${nextYear}&ordering=-added&page_size=10&key=${process.env.REACT_APP_API_KEY}`;
 
-const new_games = `games?dates=${lastYear},${currentDate}&ordering=-released&page_size=10&key=0c06a84db972452cab2b761e3c81f18b`;
+const new_games = `games?dates=${lastYear},${currentDate}&ordering=-released&page_size=10&key=${process.env.REACT_APP_API_KEY}`;
 
 export const popularGamesURL = () => `${base_url}${popular_games}`;
 export const upcomingGamesURL = () => `${base_url}${upcoming_games}`;
 export const newGamesURL = () => `${base_url}${new_games}`;
 
-console.log(popularGamesURL());
+// console.log(popularGamesURL());
+
+//  GAME DETAILS
+
+export const gameDetailsURL = (game_id) =>
+  `${base_url}games/${game_id}?key=${process.env.REACT_APP_API_KEY}`;

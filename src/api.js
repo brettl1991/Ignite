@@ -52,3 +52,7 @@ export const newGamesURL = () => `${base_url}${new_games}`;
 
 export const gameDetailsURL = (game_id) =>
   `${base_url}games/${game_id}?key=${process.env.REACT_APP_API_KEY}`;
+
+//GAMES SCREENSHOTS
+export const gameScreenShotURL = (game_id) =>
+  `${base_url}games/${game_id}/screenshots?key=${process.env.REACT_APP_API_KEY}`;

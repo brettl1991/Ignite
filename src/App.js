@@ -4,11 +4,17 @@ import Home from "./pages/Home";
 
 import GlobalStyles from "./components/GlobalStyles";
 
+import { Routes, Route } from "react-router-dom";
+
 function App() {
   return (
     <div>
       <GlobalStyles />
-      <Home />
+
+      <Routes>
+        <Route exact path="/game/:id" element={<Home />} />
+        <Route exact path="/" element={<Home />} />
+      </Routes>
     </div>
   );
 }

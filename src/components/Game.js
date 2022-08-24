@@ -1,6 +1,6 @@
 //Styling and animation
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 //REDUX
 import { useDispatch } from "react-redux";
 import { loadDetail } from "../actions/detailAction";
@@ -23,18 +23,15 @@ const Game = ({ name, released, image, id }) => {
         <motion.h3
           layoutId={`title
          ${stringPathId}`}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
         >
           {name}
         </motion.h3>
         <p>{released}</p>
+
         <motion.img
           layoutId={`image ${stringPathId}`}
           src={smallImage(image, 640)}
           alt={name}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
         />
       </Link>
     </StyledGame>

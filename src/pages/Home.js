@@ -9,7 +9,7 @@ import Game from "../components/Game";
 
 //Styling and animation
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useLocation } from "react-router-dom";
 
 const Home = () => {
@@ -27,7 +27,10 @@ const Home = () => {
   // console.log(games);
   return (
     <GameList>
-      {pathId && <GameDetail />}
+      <AnimatePresence>
+        {pathId && <GameDetail pathId={pathId} />}
+      </AnimatePresence>
+
       <h2>Upcoming Games</h2>
       <Games>
         {upcoming.map((game) => (
@@ -52,6 +55,7 @@ const Home = () => {
           />
         ))}
       </Games>
+
       <h2>New Games</h2>
       <Games>
         {newGames.map((game) => (

@@ -58,6 +58,11 @@ const StyledGame = styled(motion.div)`
     height: 40vh;
     object-fit: cover;
   }
+  @media (max-width: 450px) {
+    h3 {
+      padding: 1.5rem 1rem;
+    }
+  }
 `;
 
 export default Game;

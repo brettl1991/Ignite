@@ -41,13 +41,16 @@ const Nav = () => {
 const StyledNav = styled(motion.nav)`
   padding: 3rem 5rem;
   text-align: center;
+
   input {
+    color: #e3aaaa;
     width: 30%;
     font-size: 1.5rem;
     padding: 0.5rem;
     border: none;
     margin-top: 1rem;
-    box-shadow: 0px 0px 30px rgb(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: none;
     @media (max-width: 450px) {
       width: 70%;
       margin: 1rem;
